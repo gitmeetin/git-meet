@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <Spacer y={2} />
       <Row gap={1} className="login-row">
-        <Col className="login-column-left">Shark illustration</Col>
+        <Col>Shark illustration</Col>
         <Col className="center-util">
           <Card>
             <Text h3>Signup for GitMeet</Text>

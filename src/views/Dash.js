@@ -1,9 +1,19 @@
 import React from 'react';
-import { Button, Card, Col, Row, Spacer, Text } from '@geist-ui/react';
+import {
+  Avatar,
+  Button,
+  ButtonGroup,
+  Card,
+  Col,
+  Row,
+  Spacer,
+  Text,
+} from '@geist-ui/react';
+import { MessageSquare, User, Video } from '@geist-ui/react-icons';
 import Markdown from 'react-markdown';
-import { Github } from '@geist-ui/react-icons';
 
 import Header from '../components/Header/Header';
+import AvatarWithProfile from '../components/AvatarWithProfile/AvatarWithProfile';
 
 export default function Dash() {
   const mdTest = `<p align="center">
@@ -31,6 +41,10 @@ export default function Dash() {
   
   If you wish to donate, help out your local bee conservation organization! 🐝
   `;
+  const avatarName = 'Saurav Hiremath';
+  const avatarLink = 'https://github.com/sauravhiremath';
+  const url =
+    'https://avatars2.githubusercontent.com/u/28642011?s=400&u=410fa98db67e3e52030423c0450ea5583c79506d&v=4';
 
   return (
     <div>
@@ -39,7 +53,31 @@ export default function Dash() {
       <Row gap={1}>
         <Col>
           <Card shadow>
-            <Markdown children={mdTest} skipHtml="false" />
+            <Markdown children={mdTest} skipHtml="true" />
+            <Card.Footer style={{ marginRight: '0' }} className="center-util">
+              <div className="card-footer-column">
+                <div className="card-footer-column-left">
+                  <AvatarWithProfile
+                    avatarName={avatarName}
+                    avatarUrl={url}
+                    avatarLink={avatarLink}
+                  />
+                </div>
+                <div className="card-footer-column-right">
+                  <ButtonGroup style={{ marginRight: '0' }} type="success">
+                    <Button style={{ display: 'flex' }}>
+                      <User />
+                    </Button>
+                    <Button style={{ display: 'flex' }}>
+                      <Video />
+                    </Button>
+                    <Button style={{ display: 'flex' }}>
+                      <MessageSquare />
+                    </Button>
+                  </ButtonGroup>
+                </div>
+              </div>
+            </Card.Footer>
           </Card>
         </Col>
       </Row>
