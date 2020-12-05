@@ -7,13 +7,17 @@ import {
   Modal,
   Row,
   Spacer,
+  Input,
   Text,
 } from '@geist-ui/react';
 import { MessageSquare, User, Video } from '@geist-ui/react-icons';
 import Markdown from 'react-markdown';
 
 import Header from '../components/Header/Header';
+import SocialList from '../components/SocialList/SocialList';
 import AvatarWithProfile from '../components/AvatarWithProfile/AvatarWithProfile';
+
+import niceShark from '../assets/niceShark.png';
 
 export default function Dash() {
   const mdTest = `<p align="center">
@@ -45,6 +49,13 @@ export default function Dash() {
   const avatarLink = 'https://github.com/sauravhiremath';
   const url =
     'https://avatars2.githubusercontent.com/u/28642011?s=400&u=410fa98db67e3e52030423c0450ea5583c79506d&v=4';
+
+  const socialData = {
+    github: 'sauravhiremath',
+    twitter: 'sauravhiremath',
+    email: 'sauravhiremath@gmail.com',
+    website: 'http://sauravmh.com/',
+  };
 
   const [SocialsModal, setSocialsModal] = useState(false);
   const [VideoModal, setVideoModal] = useState(false);
@@ -94,41 +105,44 @@ export default function Dash() {
           </Card>
         </Col>
       </Row>
+
       {/* Socials Modal */}
       <Modal open={SocialsModal} onClose={() => setSocialsModal(false)}>
-        <Modal.Title>Social Modal</Modal.Title>
-        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Title>Reach out!</Modal.Title>
         <Modal.Content>
-          <p>Some content contained within the modal.</p>
+          <SocialList socialData={socialData} />
         </Modal.Content>
         <Modal.Action passive onClick={() => setSocialsModal(false)}>
-          Cancel
+          Close
         </Modal.Action>
-        <Modal.Action>Submit</Modal.Action>
       </Modal>
+
       {/* Video Modal */}
       <Modal open={VideoModal} onClose={() => setVideoModal(false)}>
-        <Modal.Title>Video Modal</Modal.Title>
-        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Title>Setup a Meet!</Modal.Title>
         <Modal.Content>
-          <p>Some content contained within the modal.</p>
+          <p>Choose a comfortable date and time.</p>
         </Modal.Content>
         <Modal.Action passive onClick={() => setVideoModal(false)}>
           Cancel
         </Modal.Action>
         <Modal.Action>Submit</Modal.Action>
       </Modal>
+
       {/* Invite Modal */}
       <Modal open={InviteModal} onClose={() => setInviteModal(false)}>
-        <Modal.Title>Invite Modal</Modal.Title>
-        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Title>Send a personalized message</Modal.Title>
+        <Modal.Subtitle>
+          <img src={niceShark} alt="nice shark" />
+        </Modal.Subtitle>
+        <Text secondary>Be nice!</Text>
         <Modal.Content>
-          <p>Some content contained within the modal.</p>
+          <Input placeholder="Hi there!" width="100%" />
         </Modal.Content>
         <Modal.Action passive onClick={() => setInviteModal(false)}>
           Cancel
         </Modal.Action>
-        <Modal.Action>Submit</Modal.Action>
+        <Modal.Action>Send</Modal.Action>
       </Modal>
       <Spacer y={1} />
     </div>
