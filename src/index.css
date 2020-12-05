@@ -4,6 +4,10 @@
   --secondary: #f1939c;
 }
 
+body{
+  overflow: auto !important;
+}
+
 ul li::before {
   /* fixes stupid Geist UI bug */
   content: '' !important;

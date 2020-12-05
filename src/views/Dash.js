@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Avatar,
   Button,
   ButtonGroup,
   Card,
   Col,
+  Modal,
   Row,
   Spacer,
   Text,
@@ -46,6 +46,10 @@ export default function Dash() {
   const url =
     'https://avatars2.githubusercontent.com/u/28642011?s=400&u=410fa98db67e3e52030423c0450ea5583c79506d&v=4';
 
+  const [SocialsModal, setSocialsModal] = useState(false);
+  const [VideoModal, setVideoModal] = useState(false);
+  const [InviteModal, setInviteModal] = useState(false);
+
   return (
     <div>
       <Header />
@@ -65,13 +69,22 @@ export default function Dash() {
                 </div>
                 <div className="card-footer-column-right">
                   <ButtonGroup style={{ marginRight: '0' }} type="success">
-                    <Button style={{ display: 'flex' }}>
+                    <Button
+                      style={{ display: 'flex' }}
+                      onClick={() => setSocialsModal(true)}
+                    >
                       <User />
                     </Button>
-                    <Button style={{ display: 'flex' }}>
+                    <Button
+                      style={{ display: 'flex' }}
+                      onClick={() => setVideoModal(true)}
+                    >
                       <Video />
                     </Button>
-                    <Button style={{ display: 'flex' }}>
+                    <Button
+                      style={{ display: 'flex' }}
+                      onClick={() => setInviteModal(true)}
+                    >
                       <MessageSquare />
                     </Button>
                   </ButtonGroup>
@@ -81,6 +94,42 @@ export default function Dash() {
           </Card>
         </Col>
       </Row>
+      {/* Socials Modal */}
+      <Modal open={SocialsModal} onClose={() => setSocialsModal(false)}>
+        <Modal.Title>Social Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setSocialsModal(false)}>
+          Cancel
+        </Modal.Action>
+        <Modal.Action>Submit</Modal.Action>
+      </Modal>
+      {/* Video Modal */}
+      <Modal open={VideoModal} onClose={() => setVideoModal(false)}>
+        <Modal.Title>Video Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setVideoModal(false)}>
+          Cancel
+        </Modal.Action>
+        <Modal.Action>Submit</Modal.Action>
+      </Modal>
+      {/* Invite Modal */}
+      <Modal open={InviteModal} onClose={() => setInviteModal(false)}>
+        <Modal.Title>Invite Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setInviteModal(false)}>
+          Cancel
+        </Modal.Action>
+        <Modal.Action>Submit</Modal.Action>
+      </Modal>
       <Spacer y={1} />
     </div>
   );
