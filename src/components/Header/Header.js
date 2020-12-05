@@ -5,7 +5,7 @@ import { Avatar, ButtonDropdown, Card, Text } from '@geist-ui/react';
 import './Header.css';
 
 export default function Header() {
-  const url =
+  const avatarUrl =
     'https://avatars0.githubusercontent.com/u/48270786?s=460&u=dab5f6dc64923f646b354f47f52af65f44fd9e7e&v=4';
   return (
     <Card shadow className="navbar">
@@ -16,9 +16,9 @@ export default function Header() {
           </Link>
         </li>
         <li className="nav-link" style={{ float: 'right' }}>
-          <ButtonDropdown>
+          <ButtonDropdown auto>
             <ButtonDropdown.Item main>
-              <Avatar src={url} size="small" />
+              <Avatar src={avatarUrl} size="small" />
               <Text style={{ marginLeft: '10px' }}>kartikcho</Text>
             </ButtonDropdown.Item>
             <ButtonDropdown.Item>Add projects</ButtonDropdown.Item>

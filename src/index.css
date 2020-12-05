@@ -8,3 +8,25 @@ ul li::before {
   /* fixes stupid Geist UI bug */
   content: '' !important;
 }
+
+.center-util {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-row {
+  min-height: 80vh;
+}
+
+.login-column-left {
+}
+
+.login-column-right {
+}
+
+@media only screen and (max-width: 600px) {
+  .login-column-left {
+    display: none;
+  }
+}
