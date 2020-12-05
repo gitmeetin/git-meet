@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Row, Text } from '@geist-ui/react';
+import { User, Row } from '@geist-ui/react';
 
 export default function AvatarWithProfile(props) {
   return (
