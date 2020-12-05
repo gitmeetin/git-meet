@@ -1,0 +1,60 @@
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  top: 0;
+  height: 6rem;
+  width: 100%;
+}
+
+.nav-link {
+  float: left;
+}
+
+/* Add a border to all( but not the last) list items */
+.nav-link:last-child {
+  border-right: none;
+}
+
+.nav-link a {
+  color: #ed5a65;
+  transition: ease-in 0.2s;
+  display: block;
+  text-align: left;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+/* Links will change color when hovered over */
+.nav-link a:hover {
+  color: #f1939c;
+  transition: ease-in 0.2s;
+}
+/*  */
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
