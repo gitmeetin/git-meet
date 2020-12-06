@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './views/Home';
 import Dash from './views/Dash';
+import AuthCallback from './components/Auth/AuthCallback';
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/auth">
+          <AuthCallback />
         </Route>
         <Route exact path="/dash">
           <Dash />
