@@ -48,7 +48,14 @@ export default function Dash() {
       <Spacer y={1} />
       <Row gap={1}>
         <Col>
-          {TldrVisible ? <TLDR tldrData={tldrData} /> : null}
+          {TldrVisible ? (
+            <TLDR
+              tldrData={
+                userData[counter].tldr ||
+                'The readme is already pretty short! Happy Raeding :D'
+              }
+            />
+          ) : null}
           <Card shadow>
             <Markdown children={userData[counter].readme} skipHtml="true" />
             <Card.Footer style={{ marginRight: '0' }} className="center-util">

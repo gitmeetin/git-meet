@@ -38,6 +38,8 @@ const data = [
     avatarUrl:
       'https://avatars2.githubusercontent.com/u/23307811?s=460&u=eab46b153eef3f5183930e61898b462447af9219&v=4',
     repoLink: 'https://github.com/saadpasta/developerFolio',
+    tldr:
+      'Feel free to use it as-is or customize it as much as you want.\r\n\r\nBut if you want to **contribute** and make this much better for other developer have a look at [Issues](https://github.com/saadpasta/developerFolio/issues).\r\n\r\n\r\nIf you created something awesome and want to contribute then feel free to open an [pull request](https://github.com/saadpasta/developerFolio/pulls).\r\n\r\n## Table of Contents\r\n- [Sections](#sections)\r\n- [Getting Started](#getting-started)\r\n- [How to Use](#how-to-use)\r\n- [Linking portfolio to Github](#linking-portfolio-to-github)\r\n- [Change and Customize](#change-and-customize-every-section-according-to-your-need)\r\n- [Deployment](#deployment)\r\n- [Technologies Used](#technologies-used)\r\n- [Illustrations](#illustrations)\r\n- [For the Future](#for-the-future)\r\n- [Contributors](#project-maintainers)\r\n\r\n',
   },
   {
     readme:
