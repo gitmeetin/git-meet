@@ -43,8 +43,15 @@ export default function Home() {
                 Let's get you setup for meeting all those hot single-quote-using
                 developers!
               </p>
-              <Button icon={<Github />} type="success" size="large">
-                <Link href={loginUrl}>Signup With GitHub</Link>
+              <Button
+                icon={<Github />}
+                type="success"
+                size="large"
+                onClick={() => {
+                  setTimeout(() => (window.location = '/dash'), 2000);
+                }}
+              >
+                Signup With GitHub
               </Button>
             </div>
           </Card>
@@ -176,8 +183,13 @@ export default function Home() {
             <h2>Let's Git Meeting!</h2>
           </div>
           <div className="btn-container">
-            <Button type="secondary">
-              <Link href={loginUrl}>Signup With GitHub</Link>
+            <Button
+              type="secondary"
+              onClick={() => {
+                setTimeout(() => (window.location = '/dash'), 2000);
+              }}
+            >
+              Signup With GitHub
             </Button>
             <Button style={{ marginLeft: '10px' }} type="secondary" ghost>
               <Link href="https://github.com/gitmeetin">

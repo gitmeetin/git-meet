@@ -6,7 +6,7 @@ import './Header.css';
 
 export default function Header(props) {
   return (
-    <Card shadow className="navbar">
+    <Card shadow className="navbar" id="impHeader">
       <ul>
         <li className="nav-link">
           <Link color to="/" target="_blank">

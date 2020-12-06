@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
 import {
   Button,
   ButtonGroup,
@@ -9,6 +10,7 @@ import {
   Spacer,
   Input,
   Text,
+  useToasts,
 } from '@geist-ui/react';
 import { MessageSquare, User, Video, Check, X } from '@geist-ui/react-icons';
 import Markdown from 'react-markdown';
@@ -17,40 +19,12 @@ import Header from '../components/Header/Header';
 import SocialList from '../components/SocialList/SocialList';
 import TLDR from '../components/TLDR/TLDR';
 import AvatarWithProfile from '../components/AvatarWithProfile/AvatarWithProfile';
+import data from './data';
 
 import niceShark from '../assets/niceShark.png';
+import { NavLink } from 'react-router-dom';
 
 export default function Dash() {
-  const mdTest = `<p align="center">
-    <img height="200" src="https://user-images.githubusercontent.com/48270786/86530947-d68e0100-beda-11ea-9b17-af91633aec9e.png">
-  </p>
-  
-  #### [Repository](https://github.com/kartik918/Ya-Like-Jazz)&nbsp;&nbsp;|&nbsp;&nbsp;[Issues](https://github.com/kartik918/Ya-Like-Jazz/issues)&nbsp;&nbsp;|&nbsp;&nbsp;[Author](https://github.com/kartik918)&nbsp;&nbsp;
-  
-  ## What it does
-  
-  Insert a line/para from the Bee Movie script to replace using the boring old Lorem Ipsum text for placeholder texts.
-  
-  ## Usage
-  
-  Open your command palette (press F1), type <code><i>jazz</i></code> and choose to insert a line or para.
-  
-  ![yalikejazz](https://user-images.githubusercontent.com/48270786/86530232-99267500-bed4-11ea-989e-a4577d0307e0.gif)
-  ## Why I made it
-  
-  The world needs less lorem ipsum and more bees!
-  
-  ## Support
-  
-  This isn't exactly worth a cup of coffee but you can show support by using the extension, opening PRs, issues and dropping a star ⭐:)
-  
-  If you wish to donate, help out your local bee conservation organization! 🐝
-  `;
-  const avatarName = 'Saurav Hiremath';
-  const avatarLink = 'https://github.com/sauravhiremath';
-  const url =
-    'https://avatars2.githubusercontent.com/u/28642011?s=400&u=410fa98db67e3e52030423c0450ea5583c79506d&v=4';
-
   const socialData = {
     github: 'sauravhiremath',
     twitter: 'sauravhiremath',
@@ -64,6 +38,9 @@ export default function Dash() {
   const [SocialsModal, setSocialsModal] = useState(false);
   const [VideoModal, setVideoModal] = useState(false);
   const [InviteModal, setInviteModal] = useState(false);
+  const [toast, setToast] = useToasts();
+  const [userData, setUserData] = useState(data);
+  const [counter, setCounter] = useState(0);
 
   return (
     <div>
@@ -73,14 +50,14 @@ export default function Dash() {
         <Col>
           {TldrVisible ? <TLDR tldrData={tldrData} /> : null}
           <Card shadow>
-            <Markdown children={mdTest} skipHtml="true" />
+            <Markdown children={userData[counter].readme} skipHtml="true" />
             <Card.Footer style={{ marginRight: '0' }} className="center-util">
               <div className="card-footer-column">
                 <div className="card-footer-column-left">
                   <AvatarWithProfile
-                    avatarName={avatarName}
-                    avatarUrl={url}
-                    avatarLink={avatarLink}
+                    avatarName={userData[counter].avatarName}
+                    avatarUrl={userData[counter].avatarUrl}
+                    avatarLink={userData[counter].repoLink}
                   />
                 </div>
                 <div className="card-footer-column-right">
@@ -113,10 +90,32 @@ export default function Dash() {
           <Col align="middle">
             <div className="meetButton">
               <Button auto>
-                <X color="red" size={48} />
+                <X
+                  color="red"
+                  size={48}
+                  onClick={() => {
+                    setToast({
+                      text: 'You rejected the project',
+                      type: 'warning',
+                    });
+                    setCounter((counter + 1) % 3);
+                    window.location = window.location + '#impHeader';
+                  }}
+                />
               </Button>
               <Spacer x={3} inline />
-              <Button style={{ alignItems: 'center' }} auto>
+              <Button
+                style={{ alignItems: 'center' }}
+                auto
+                onClick={() => {
+                  setToast({
+                    text: 'You liked a project! Added to your list :D',
+                    type: 'success',
+                  });
+                  setCounter((counter + 1) % 3);
+                  window.location = window.location + '#impHeader';
+                }}
+              >
                 <Check color="Green" size={48} />
               </Button>
             </div>
@@ -140,6 +139,7 @@ export default function Dash() {
         <Modal.Title>Setup a Meet!</Modal.Title>
         <Modal.Content>
           <p>Choose a comfortable date and time.</p>
+          <DatePicker selected={new Date()} onChange={() => {}} />
         </Modal.Content>
         <Modal.Action passive onClick={() => setVideoModal(false)}>
           Cancel
