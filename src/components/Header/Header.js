@@ -32,6 +32,6 @@ export default function Header(props) {
 
 Header.defaultProps = {
   avatarUrl:
-    'https://avatars0.githubusercontent.com/u/48270786?s=460&u=dab5f6dc64923f646b354f47f52af65f44fd9e7e&v=4',
-  avatarName: 'kartikcho',
+    'https://user-images.githubusercontent.com/48270786/101278313-821be400-37e0-11eb-93ed-be70df7605ce.png',
+  avatarName: 'Sharky',
 };

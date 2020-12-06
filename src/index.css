@@ -69,10 +69,6 @@ ul li::before {
 }
 
 /* Landing CSS */
-* {
-  margin: 0;
-  padding: 0;
-}
 
 .hero {
   width: 100%;
@@ -222,11 +218,11 @@ ul li::before {
   position: absolute;
 }
 
-.card p {
+.card-login p {
   padding: 20px 0;
 }
 
-.card {
+.card-login {
   padding: 40px 0;
   width: 250px;
   text-align: center;

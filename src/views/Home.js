@@ -27,7 +27,7 @@ export default function Home() {
 
   // if user already "authenticated", redirect them to the app
   if (isAuthorized) {
-    return <NavLink to="/app" />;
+    return <NavLink to="/dash" />;
   }
 
   return (
@@ -37,14 +37,14 @@ export default function Home() {
         <div className="login">
           <img className="shark-one" src={landingShark} alt="shark" />
           <Card hoverable>
-            <div className="card">
+            <div className="card-login">
               <h3>Signup for GitMeet</h3>
               <p>
                 Let's get you setup for meeting all those hot single-quote-using
                 developers!
               </p>
               <Button icon={<Github />} type="success" size="large">
-                <a href={loginUrl}>Signup With GitHub</a>
+                <Link href={loginUrl}>Signup With GitHub</Link>
               </Button>
             </div>
           </Card>
