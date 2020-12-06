@@ -23,6 +23,7 @@ import data from './data';
 
 import niceShark from '../assets/niceShark.png';
 import { NavLink } from 'react-router-dom';
+import Profile from './Profile';
 
 export default function Dash() {
   const socialData = {
@@ -52,7 +53,7 @@ export default function Dash() {
             <TLDR
               tldrData={
                 userData[counter].tldr ||
-                'The readme is already pretty short! Happy Raeding :D'
+                'The readme is already pretty short! Happy Reading :D'
               }
             />
           ) : null}
@@ -147,6 +148,14 @@ export default function Dash() {
         <Modal.Content>
           <p>Choose a comfortable date and time.</p>
           <DatePicker selected={new Date()} onChange={() => {}} />
+          <Spacer />
+          <a
+            href={`https://www.dyte.in/session/bejewled-gilmoreosaurus + ${userData[counter].avatarName}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            My meeting ID
+          </a>
         </Modal.Content>
         <Modal.Action passive onClick={() => setVideoModal(false)}>
           Cancel
