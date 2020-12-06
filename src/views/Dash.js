@@ -10,11 +10,12 @@ import {
   Input,
   Text,
 } from '@geist-ui/react';
-import { MessageSquare, User, Video } from '@geist-ui/react-icons';
+import { MessageSquare, User, Video, Check, X } from '@geist-ui/react-icons';
 import Markdown from 'react-markdown';
 
 import Header from '../components/Header/Header';
 import SocialList from '../components/SocialList/SocialList';
+import TLDR from '../components/TLDR/TLDR';
 import AvatarWithProfile from '../components/AvatarWithProfile/AvatarWithProfile';
 
 import niceShark from '../assets/niceShark.png';
@@ -57,6 +58,9 @@ export default function Dash() {
     website: 'http://sauravmh.com/',
   };
 
+  const tldrData = 'This is sample TLDR data';
+
+  const [TldrVisible, setTldrVisible] = useState(true);
   const [SocialsModal, setSocialsModal] = useState(false);
   const [VideoModal, setVideoModal] = useState(false);
   const [InviteModal, setInviteModal] = useState(false);
@@ -67,6 +71,7 @@ export default function Dash() {
       <Spacer y={1} />
       <Row gap={1}>
         <Col>
+          {TldrVisible ? <TLDR tldrData={tldrData} /> : null}
           <Card shadow>
             <Markdown children={mdTest} skipHtml="true" />
             <Card.Footer style={{ marginRight: '0' }} className="center-util">
@@ -103,6 +108,19 @@ export default function Dash() {
               </div>
             </Card.Footer>
           </Card>
+          <Spacer y={3} />
+
+          <Col align="middle">
+            <div className="meetButton">
+              <Button auto>
+                <X color="red" size={48} />
+              </Button>
+              <Spacer x={3} inline />
+              <Button style={{ alignItems: 'center' }} auto>
+                <Check color="Green" size={48} />
+              </Button>
+            </div>
+          </Col>
         </Col>
       </Row>
 
