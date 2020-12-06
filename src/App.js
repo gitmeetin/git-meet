@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './views/Home';
 import Dash from './views/Dash';
+import Profile from './views/Profile';
 import AuthCallback from './components/Auth/AuthCallback';
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route exact path="/dash">
           <Dash />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
         {/*   <Route path="*">
             <ErrorPage />
