@@ -103,14 +103,14 @@ export default function Home() {
                 just finding great work!
               </p>
               <ul>
-                <li>
+                <li className="square-list">
                   Reach out to the developer with a list of all their public
                   handles.
                 </li>
-                <li>
+                <li className="square-list">
                   Send a personalized message introducing yourself to them.
                 </li>
-                <li>
+                <li className="square-list">
                   Schedule a call to discuss about your interests, collaborating
                   and making a friend!
                 </li>
@@ -144,17 +144,17 @@ export default function Home() {
           <div className="intro-text">
             <h1>Why we built GitMeet?</h1>
             <ul>
-              <li>
+              <li className="square-list">
                 Having personal experiences struggling with finding great Open
                 Source developers with similar interests, we decided to build
                 our own platform to connect and help the OS community{' '}
               </li>
-              <li>
+              <li className="square-list">
                 Finding good mentors with projects to collaborate on can be
                 difficult but it doesn't have to be when you can meetup and also
                 be friends with them!
               </li>
-              <li>
+              <li className="square-list">
                 It let&#39;s you take your utility tools, a step further.
                 Designed specifically to enhance your Fellowship experience.
               </li>
@@ -176,16 +176,14 @@ export default function Home() {
             <h2>Let's Git Meeting!</h2>
           </div>
           <div className="btn-container">
-            <ButtonGroup type="success">
-              <Button>
-                <Link href="#">Signup With GitHub</Link>
-              </Button>
-              <Button type="success" ghost>
-                <Link href="https://github.com/gitmeetin">
-                  Contribute to development
-                </Link>
-              </Button>
-            </ButtonGroup>
+            <Button type="secondary">
+              <Link href={loginUrl}>Signup With GitHub</Link>
+            </Button>
+            <Button style={{ marginLeft: '10px' }} type="secondary" ghost>
+              <Link href="https://github.com/gitmeetin">
+                Contribute to development
+              </Link>
+            </Button>
           </div>
         </div>
         <img src={footerShark} alt="Shark" className="shark-two" />
