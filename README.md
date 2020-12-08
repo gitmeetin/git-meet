@@ -6,7 +6,6 @@
 
 - Having personal experiences struggling with finding great Open Source developers with similar interests, we decided to build our own platform to connect and help the OS community
 - Finding good mentors with projects to collaborate on can be difficult but it doesn't have to be when you can meet up and also be friends with them!
-- It lets you take your utility tools, a step further. Designed specifically to enhance your Fellowship experience.
 
 ## What it does
 
