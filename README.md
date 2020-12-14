@@ -36,5 +36,3 @@
 ## What we learned
 
 We used Datastax Astra for the first time and had an amazing time with their well-written documents. 
-
-*Built as a hackathon project for Shark Hacks, currently unmaintained*
